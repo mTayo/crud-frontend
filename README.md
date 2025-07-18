@@ -1,69 +1,118 @@
-# React + TypeScript + Vite
+# Task Manager Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend of the **Task Manager App**, built with [React.js](https://reactjs.org/), [Vite](https://vitejs.dev/), [Tailwind CSS](https://tailwindcss.com/), and [Radix UI](https://www.radix-ui.com/docs/primitives/components/dialog).
 
-Currently, two official plugins are available:
+It interacts with a Node.js/Express + Prisma + MySQL backend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🔧 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ✅ Authentication via JWT
+- ✅ View all tasks
+- ✅ Filter tasks by:
+  - Status (`Pending`, `In Progress`, `Done`)
+  - Due date
+  - Created date
+- ✅ Create a new task using a modal
+- ✅ Edit existing tasks using the same modal
+- ✅ Delete tasks
+- ✅ Update task status inline with dropdown
+- ✅ Task metrics/analytics display:
+  - Total tasks
+  - Pending tasks
+  - In progress tasks
+  - Completed tasks
+- ✅ Responsive design with Tailwind CSS
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🚀 Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/your-username/task-manager-frontend.git
+cd task-manager-frontend
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install Dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+### 3. Configure Environment Variables
+
+Create a `.env` file in the root:
+
+```env
+VITE_API_BASE_URL=https://your-backend-url.com/api
+```
+
+Update the URL to point to your deployed or local backend.
+
+---
+
+## 🧱 Folder Structure
+
+```
+src/
+│
+├── components/          # Reusable components (modals, filters, table, badges)
+├── pages/               # Page components like Dashboard
+├── services/            # Axios API calls
+├── utils/               # Date formatting and helpers
+├── types/               # TypeScript interfaces
+├── App.tsx              # App root
+└── main.tsx             # Vite entry point
+```
+
+---
+
+## 📦 Scripts
+
+```bash
+npm run dev       # Start development server
+npm run build     # Build for production
+npm run preview   # Preview production build locally
+```
+
+---
+
+## 🖼 Example UI
+
+- Status badges with colors (Pending, In Progress, Done)
+- Date filters using date picker
+- Dropdown menu for changing task status
+- Modals using Radix UI for create/edit
+
+---
+
+## 🔐 Authentication
+
+Make sure your backend returns a JWT token on login. Store it in `localStorage` or `cookie`, and send it as a bearer token with API requests:
+
+```ts
+Authorization: Bearer <your_token>
+```
+
+---
+
+## ✅ TODO
+
+- Add pagination
+- Add user profile management
+- Improve error handling and validations
+
+---
+
+## 📄 License
+
+MIT
+
+---
+
+## ✨ Credits
+
+Built by [@mTayo](https://github.com/mTayo)
