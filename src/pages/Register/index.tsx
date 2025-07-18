@@ -66,7 +66,7 @@ const RegisterPage = () => {
                 ...formData,
          
             };
-            const {data:{data: {user, token}}} = await AuthServiceApi.signIn(payload);
+            const {data:{data: {user, token}}} = await AuthServiceApi.createAccount(payload);
     
             const userPayload: IUser = {
                 ...user
@@ -74,7 +74,7 @@ const RegisterPage = () => {
             dispatch(setActiveUser(userPayload));
             Cookies.set('access_token', token);
             navigate('/home');
-            successToast('Sign in successful');
+            successToast('Registration successful');
         } catch (error) {
             const err = extractErrorMessage(error);
             errorToast(err);

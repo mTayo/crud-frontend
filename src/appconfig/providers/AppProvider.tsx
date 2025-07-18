@@ -69,4 +69,4 @@ const AppProvider: React.FC<React.PropsWithChildren<object>> = (props) => {
                 )}
         </div>);
 };
-export default AppProvider;
+export default React.memo(AppProvider);
