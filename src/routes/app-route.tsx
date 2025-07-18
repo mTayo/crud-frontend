@@ -3,6 +3,7 @@ import HomePageLayout from 'Layout/HomeLayout';
 import AuthLayout from 'Layout/AuthLayout';
 import Loadable from 'components/common/Loadable';
 import AppProvider from 'appconfig/providers/AppProvider';
+import { Navigate } from 'react-router-dom';
 
 
 // ===========================||  ROUTING ||=========================== //
@@ -36,6 +37,11 @@ export const HomeRoutes = {
     </AppProvider>
   ),
   children: [
+
+    {
+        path: '/',
+        element: <Navigate to="/auth/sign-in" replace />
+    },
     {
         path: '/home',
         element: <HomePage />,
