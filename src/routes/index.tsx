@@ -7,7 +7,7 @@ import {
 // ===========================|| ROUTING RENDER ||=========================== //
 
 
-const router = createBrowserRouter([HomeRoutes, AuthRoutes]);
+const router = createBrowserRouter([AuthRoutes,HomeRoutes]);
   
 export default router;
   

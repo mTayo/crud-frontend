@@ -3,7 +3,7 @@ import type { RootState } from 'appconfig/redux-store';
 import { useAppSelector } from 'appconfig/redux-store/hooks';
 import React, { useEffect, useReducer } from 'react';
 import { TaskServiceApi } from 'services/task.service';
-import { formatDate, formatFilterDate } from 'utils';
+import { formatDate, formatFilterDate, truncateMultilineText } from 'utils';
 import TaskFilters from './TaskFilter';
 import StatusDropdown from 'components/TaskDropDown';
 import StatusBadge from 'components/common/StatusBadge';
@@ -189,7 +189,7 @@ const Home = () => {
                             <tr key={task.id}>
                                 <td className="px-4 py-2 font-mono text-xs text-gray-500">{task.id}</td>
                                 <td className="px-4 py-2">{task.title}</td>
-                                <td className="px-4 py-2">{task.description}</td>
+                                <td className="px-4 py-2">{truncateMultilineText(task.description, 25)}</td>
                                 <td className="px-4 py-2">
                                     <StatusBadge
                                         status={
