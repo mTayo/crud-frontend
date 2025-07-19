@@ -9,6 +9,7 @@ import { AuthServiceApi } from "services/auth.service";
 import { extractErrorMessage, isObjectEmpty } from "utils";
 import Cookies from 'js-cookie';
 import { errorToast, successToast } from "components/common/Toast";
+import Button from "components/common/Button";
 
 type InitialState = {
     formData: {
@@ -112,7 +113,7 @@ const LoginPage = () => {
         <div className="max-w-md w-full">
             <h2 className="text-2xl font-semibold mb-8">Welcome back to CRUD</h2>
             
-            <form className="space-y-4" onSubmit={handleSubmit}>
+            <div className="space-y-4">
                 <div>
                     <FormInput 
                         inputName="email" 
@@ -147,10 +148,13 @@ const LoginPage = () => {
                 
                 </div>
                 
-                <button className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-500">
-                Sign In
-                </button>
-            </form>
+                <Button 
+                    action={handleSubmit}
+                    text="Sign in" 
+                    className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-500"
+                    isLoading={state.isLoading}
+                />
+            </div>
 
             <p className="mt-4 text-sm text-gray-400 text-center">
                 Don't have an account?{' '}

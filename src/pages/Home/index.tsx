@@ -9,6 +9,7 @@ import StatusDropdown from 'components/TaskDropDown';
 import StatusBadge from 'components/common/StatusBadge';
 import TaskModal from './TaskModal';
 import { successToast } from 'components/common/Toast';
+import Button from 'components/common/Button';
 
 type Task = {
     id: string | number;
@@ -161,12 +162,12 @@ const Home = () => {
             </div>
             <div className="mt-10 flex justify-between items-end mb-4">
                 <div className="">
-                    <button
-                        onClick={() => setState({ isTaskModalOpen: true, editTask: null })}
-                        className="px-3 cursor-pointer py-1 bg-green-600  text-sm text-white rounded hover:bg-green-500"
-                    >
-                        Create Task
-                    </button>
+                    <Button
+                        text="Create Task"
+                        className="bg-green-600 text-white text-sm py-2 px-4 rounded hover:bg-green-500"
+                        action={() => setState({ isTaskModalOpen: true, editTask: null })}
+                    />
+                    
                 </div>
                 <TaskFilters onChange={handleFilterChange} />
             </div>

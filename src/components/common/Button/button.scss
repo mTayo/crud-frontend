@@ -1,0 +1,11 @@
+.white-btn{
+    background: #FFF;
+}
+.grey-btn{
+    border-radius: var(--Buttons-Regular, 8px);
+    border: 1px solid #383838;
+    background: #1E1E1F;
+}
+.dark-btn-outline{
+    border: var(--inputs-select-none, 1px) solid var(--Light-StormGrey-80, #BFC8D2);
+}
