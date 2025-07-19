@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import React, { type JSX } from 'react';
+import  { type JSX } from 'react';
 import './button.scss';
 import MoonLoader from "react-spinners/MoonLoader"
 import AnimateElement from '../AnimateElement';
