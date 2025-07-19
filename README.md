@@ -1,5 +1,6 @@
 # Task Manager Frontend
 
+## Frontend url: https://crud-frontend-fawn.vercel.app/
 This is the frontend of the **Task Manager App**, built with [React.js](https://reactjs.org/), [Vite](https://vitejs.dev/), [Tailwind CSS](https://tailwindcss.com/), and [Radix UI](https://www.radix-ui.com/docs/primitives/components/dialog).
 
 It interacts with a Node.js/Express + Prisma + MySQL backend.
