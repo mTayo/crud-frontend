@@ -5,7 +5,7 @@ import Cookies from 'js-cookie';
 import type { AxiosResponse, AxiosInstance } from 'axios';
 
 const axiosInstance: AxiosInstance = axios.create({
-    baseURL: `http://localhost:7000/api/`
+    baseURL: `https://crud-backend-8cp7.onrender.com/api/`
 });
 
 axiosInstance.interceptors.request.use(
